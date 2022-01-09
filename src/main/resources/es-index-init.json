@@ -1,0 +1,42 @@
+// DELETE blog
+// PUT /blog
+{
+  "settings": {
+    "number_of_shards": "3",
+    "number_of_replicas": "1",
+    "analysis": {
+      "analyzer": {
+        "default": {
+          "tokenizer": "ik_max_word"
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "author": {
+        "type": "text",
+        "analyzer":"ik_max_word"
+      },
+      "title": {
+        "type": "text",
+        "analyzer":"ik_max_word"
+      },
+      "labels": {
+        "type": "text",
+        "analyzer":"ik_max_word"
+      },
+      "description": {
+        "type": "text",
+        "analyzer":"ik_max_word"
+      },
+      "content": {
+        "type": "text",
+        "analyzer":"ik_max_word"
+      },
+      "createDate": {
+        "type": "date"
+      }
+    }
+  }
+}
